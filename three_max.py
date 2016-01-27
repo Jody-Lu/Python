@@ -8,12 +8,14 @@ def readfile(file_name):
 
  	return lines
 
-def three_max(lines):
+def three_max(nums):
+	print nums
 	result = [0]*3
-	for i in range(0, len(lines)):
+	for i in range(0, len(nums)):
 		for j in range(0, len(result) - 1):
-			if lines[i] > result[j]:
-				result[j], result[j+1], result[j+2] = lines[i],result[j], result[j+1]
+			if nums[i] > result[j]:
+				result = [nums[i], result[j], result[j+1]]
+				print result
 				break
 
 	return result
@@ -22,4 +24,5 @@ def three_max(lines):
 
 if __name__ == '__main__':
 	print three_max(readfile("input.txt"))
+
 
