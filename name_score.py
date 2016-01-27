@@ -12,8 +12,8 @@ def readfile(file_name):
 
 def name_score(names):
 	names.sort()
-	total_score = sum([sum([ord(x) - 64 for x in name]) \
-					* (i + 1) for i, name in enumerate(names, 0)])
+	total_score = sum([sum([ord(chrac) - 64 for chrac in name]) \
+					* (index + 1) for index, name in enumerate(names, 0)])
 
 	return total_score
 
