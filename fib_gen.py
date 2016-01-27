@@ -1,10 +1,8 @@
 def fib():
-	a = 1
-	yield a
+	a = 0
 	b = 1
-	yield b
 
 	while 1:
-   		c = a + b
-    	yield c
-    	a, b = b, c
+		yield b
+		a, b = b, a + b
+
