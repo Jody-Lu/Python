@@ -9,17 +9,23 @@ def readfile(file_name):
  	return numbers
 
 def three_max(numbers):
-	result = [0]*3
-	for index in range(0, len(numbers)):
-		if numbers[index] > result[0]:
-			result.insert(0, numbers[index])
-			result.pop()
+	result = [0]*4
+	for index in range(len(numbers)):
+		result[-1] = numbers[index]
 
-	return result
+		for j in range(len(result) - 1, 0, - 1):
+			if result[j] > result[j - 1]:
+				result[j], result[j - 1] = result[j - 1], result[j]
+			else:
+				break
+
+
+	return result[:len(result) - 1]
 
 
 
 if __name__ == '__main__':
 	print three_max(readfile("input.txt"))
+
 
 
